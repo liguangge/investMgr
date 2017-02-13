@@ -1,4 +1,4 @@
-# investmgr
+# investmgr 
 
 > A Vue.js project
 
