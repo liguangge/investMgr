@@ -7,20 +7,48 @@
       <div class="tab">
         <router-link to="/equity">btnequity</router-link>
       </div>
+      <div class="tab">
+        <router-link to="/usermgr">usermgr</router-link>
+      </div>
+      <div class="approach" v-if="showanimation">
+        dfadf
+      </div>
     </div>
-    <transition name="slidetoright" mode="out-in">
-      <router-view></router-view>
+    <transition :name="transitionName" mode="out-in">
+      <router-view class="viewclass"></router-view>
     </transition>
+
   </div>
 </template>
 
 <script>
-  import header from 'components/header/header.vue'
+  //  import header from 'components/header/header.vue'
 
   export default {
-    components: {
-      'v-header': header
-    }
+    created() {
+      console.log('created')
+      setTimeout(() => {
+        this.showanimation = false
+      }, 3000)
+    },
+    data () {
+      console.log('1' + this.transitionName)
+      return {
+        transitionName: 'slide-left',
+        showanimation: true
+      }
+    },
+    watch: {
+      '$route' (to, from) {
+        let routerMap = {
+          '/': 0,
+          '/equity': 10,
+          '/usermgr': 20
+        }
+        this.transitionName = routerMap[from.path] < routerMap[to.path] ? 'slide-left' : 'slide-right'
+      }
+    },
+    components: {}
   }
 </script>
 
@@ -33,33 +61,28 @@
     border: 1px solid #333
     .tab
       flex: 1
-      width: 50%
+      text-align: center
 
-  .slidetoright-enter
-    transform: translateX(-100%)
+  .approach
+    position: absolute
+    width: 100%;
+    height: 100%;
+    opacity: 1
+    z-index: 100
+    background: black
 
-  slidetoright-leave-to
-    transform: translateX(100%)
+  .viewclass {
+    position: absolute;
+    transition: all .5s cubic-bezier(.55, 0, .1, 1);
+  }
 
-  .slidetoright-enter-active
-    transition: all .8s ease
-    translateX(0)
+  .slide-left-enter, .slide-right-leave-active {
+    opacity: 0
+    transform: translate(30px, 0)
+  }
 
-  .slidetoright-leave-active
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
-    translateX(0)
-
-  .slidetoleft-enter
-    transform: translateX(100%)
-
-  .slidetoleft-leave-to
-    transform: translateX(0)
-
-  .slidetoleft-enter-active
-    transition: all .8s ease
-    translateX(0)
-
-  .slidetoleft-leave-active
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
-    translateX(-100%)
+  .slide-left-leave-active, .slide-right-enter {
+    opacity: 0;
+    transform: translate(-30px, 0)
+  }
 </style>
