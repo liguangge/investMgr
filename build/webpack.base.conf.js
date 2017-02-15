@@ -28,6 +28,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.common.js',
       'src': resolve('src'),
       'assets': resolve('src/assets'),
+      'ystui': resolve('ystui/component'),
       'components': resolve('src/components')
     }
   },
