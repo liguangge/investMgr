@@ -1,12 +1,22 @@
 <template>
   <div class="index">
-    indexfdasfadsfadsfadsfasdfasdfadsfadfdafadfadfad
+    index
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 
   export default {
+    created() {
+      this.$emit('showloadimg')
+      setTimeout(() => {
+      }, 500)
+      console.log('created index')
+    },
+    mounted() {
+      console.log('mouted index')
+      this.$emit('hideloadimg')
+    }
   }
 </script>
 

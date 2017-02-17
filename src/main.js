@@ -6,6 +6,14 @@ import router from './router'
 
 import 'common/stylus/index.styl'
 
+router.beforeEach((to, from, next) => {
+  console.log('全局router.beforeEach')
+  next()
+})
+
+router.afterEach((to, from) => {
+  console.log('全局router.afterEach')
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

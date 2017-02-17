@@ -11,7 +11,11 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: Index
+      component: Index,
+      beforeEnter: (to, from, next) => {
+        console.log('index before enter')
+        next()
+      }
     },
     {
       path: '/equity',
