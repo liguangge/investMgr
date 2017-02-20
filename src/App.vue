@@ -40,10 +40,9 @@
       }, 3000)
     },
     data () {
-      console.log('1' + this.transitionName)
       return {
         transitionName: 'slide-left',
-        loading: true
+        loading: false
       }
     },
     watch: {
@@ -107,9 +106,36 @@
     display: flex
     border: 1px solid #333
     ul
+      positive:relative
       display:flex
       li
         flex: 1
+    .quebec
+      position: absolute
+      top: 20px
+      left: -100px
+      z-index: 3
+      margin: 0
+      border: 0
+      width: 5px
+      height: 5px
+      padding: 0
+      overflow: hidden
+      background: #511d7f
+      transition-property: left, width
+      transition-duration: .5s
+    .n1:hover ~ li.quebec
+      left: 5px
+      width: 110px
+    .n2:hover ~ li.quebec
+      left: 115px
+      width: 110px
+    .n3:hover ~ li.quebec
+      left: 225px
+      width: 110px
+    .n4:hover ~ li.quebec
+      left: 335px
+      width: 110px
   .approach
     position: absolute
     left: 0
