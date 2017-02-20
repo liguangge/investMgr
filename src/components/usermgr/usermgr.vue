@@ -9,7 +9,7 @@
   export default {
     props: {
       content: {
-        type: Object,
+        type: String,
         default: function () {
           return {content: 'hello'}
         }

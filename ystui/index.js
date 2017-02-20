@@ -2,9 +2,9 @@
  * Created by kevin on 17/2/14.
  */
 // es6 polyfill
-import Icon from './components/icon'
+import Icon from './component/icon'
 
-const ystview = {
+let ystview = {
   Icon
 
 };
@@ -21,4 +21,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-module.exports = Object.assign(iview, {install});   // eslint-disable-line no-undef
+module.exports = Object.assign(ystview, {install});   // eslint-disable-line no-undef

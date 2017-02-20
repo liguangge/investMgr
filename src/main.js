@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import {getCookie} from './util/util'
 
 import 'common/stylus/index.styl'
+
+router.beforeEach((to, from, next) => {
+  console.log('router.beforeEach')
+  console.log(getCookie('test'))
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({
