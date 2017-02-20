@@ -7,9 +7,6 @@
 <script type="text/ecmascript-6">
 
   export default {
-    created() {
-      console.log('created usermgr')
-    }
   }
 </script>
 
