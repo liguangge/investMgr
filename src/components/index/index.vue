@@ -1,12 +1,20 @@
 <template>
   <div class="index">
-    indexfdasfadsfadsfadsfasdfasdfadsfadfdafadfadfad
+    indexfdasfadsfadsfadsfasdfasdfadsfadfdafadfadfad{{content}}
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 
   export default {
+    props: {
+      content: {
+        type: Object,
+        default: function () {
+          return {content: 'hello'}
+        }
+      }
+    }
   }
 </script>
 
