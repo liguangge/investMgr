@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">
+    <div class="header" v-if="auth">
       <ul>
         <li class="n1">
           <router-link to="/">btnindex</router-link>
@@ -33,6 +33,14 @@
   //  import header from 'components/header/header.vue'
 
   export default {
+    props: {
+      auth: {
+        type: Boolean,
+        default: function () {
+          return true
+        }
+      }
+    },
     created() {
       console.log('created')
       setTimeout(() => {
