@@ -67,128 +67,81 @@
         position: relative
         overflow: hidden
         transition-duration: 400ms
+    &.lang-unactive
+      li:nth-of-type(1)
+        transition-delay: 100ms
+      li:nth-of-type(2)
+        transition-delay: 150ms
+      li:nth-of-type(3)
+        transition-delay: 200ms
+      li:nth-of-type(4)
+        transition-delay: 100ms
+      li:nth-of-type(5)
+        transition-delay: 150ms
+      li:nth-of-type(6)
+        transition-delay: 150ms
+      li:nth-of-type(7)
+        transition-delay: 50ms
+      li:nth-of-type(8)
+        transition-delay: 100ms
+      li:nth-of-type(9)
+        transition-delay: 100ms;
+    &.land-active
+      li
+        transform: translateY(0%)
+        opacity: 1
+        transition: all 0.4s ease-in-out
+      li:nth-of-type(1)
+        transition-delay: 250ms
+      li:nth-of-type(2)
+        transition-delay: 200ms
+      li:nth-of-type(3)
+        transition-delay: 100ms
+      li:nth-of-type(4)
+        transition-delay: 250ms
+      li:nth-of-type(5)
+        transition-delay: 200ms
+      li:nth-of-type(6)
+        transition-delay: 200ms
+      li:nth-of-type(7)
+        transition-delay: 250ms
+      li:nth-of-type(8)
+        transition-delay: 250ms
+      li:nth-of-type(9)
+        transition-delay: 250ms
 
-  .
-  land-unactive
-  .land-active li
-    transform: translateY(0%)
-    opacity: 1
-    transition: all 0.4s ease-in-out
-
-  .land-unactive li:nth-of-type(1) {
-    transition-delay: 100ms;
-  }
-
-  .land-unactive li:nth-of-type(2) {
-    transition-delay: 150ms;
-  }
-
-  .land-unactive li:nth-of-type(3) {
-    transition-delay: 200ms;
-  }
-
-  .land-unactive li:nth-of-type(4) {
-    transition-delay: 100ms;
-  }
-
-  .land-unactive li:nth-of-type(5) {
-    transition-delay: 150ms;
-  }
-
-  .land-unactive li:nth-of-type(6) {
-    transition-delay: 150ms;
-  }
-
-  .land-unactive li:nth-of-type(7) {
-    transition-delay: 50ms;
-  }
-
-  .land-unactive li:nth-of-type(8) {
-    transition-delay: 100ms;
-  }
-
-  .land-unactive li:nth-of-type(9) {
-    transition-delay: 100ms;
-  }
-
-  .land-active li
-    transform: translateY(0%)
-    opacity: 1
-    transition: all 0.4s ease-in-out
-
-  .land-active li:nth-of-type(1) {
-    transition-delay: 250ms;
-  }
-
-  .land-active li:nth-of-type(2) {
-    transition-delay: 200ms;
-  }
-
-  .land-active li:nth-of-type(3) {
-    transition-delay: 100ms;
-  }
-
-  .land-active li:nth-of-type(4) {
-    transition-delay: 250ms;
-  }
-
-  .land-active li:nth-of-type(5) {
-    transition-delay: 200ms;
-  }
-
-  .land-active li:nth-of-type(6) {
-    transition-delay: 200ms;
-  }
-
-  .land-active li:nth-of-type(7) {
-    transition-delay: 250ms;
-  }
-
-  .land-active li:nth-of-type(8) {
-    transition-delay: 250ms;
-  }
-
-  .land-active li:nth-of-type(9) {
-    transition-delay: 250ms;
-  }
-
-  #landing li .before
-    position: absolute
-    width: 20px
-    height: 20px
-    border-radius: 50%
-    opacity: 0
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    transition: 0.4s ease-in-out
-
-  #landing li header
-    width: 100%
-    height: 100%
-    z-index: 4
-    position: absolute
-    top: 0
-    left: 0
-
-  #landing li h1
-    width: 100%
-    height: 100%
-    text-align: center
-    position: relative
-
-  #landing h1 div
-    width: 100%
-    height: 28%
-    position: absolute
-    overflow: hidden
-
-  #landing h1 div:nth-of-type(1)
-    top: 22%
-    line-height: 100%
-
-  #landing h1 div:nth-of-type(2)
-    top: 50%
+    li .before
+      position: absolute
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      opacity: 0
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      transition: 0.4s ease-in-out
+      header
+        width: 100%
+        height: 100%
+        z-index: 4
+        position: absolute
+        top: 0
+        left: 0
+    li h1
+      width: 100%
+      height: 100%
+      text-align: center
+      position: relative
+      div
+        width: 100%
+        height: 28%
+        position: absolute
+        overflow: hidden
+      div:nth-of-type(1)
+        top: 22%
+        line-height: 100%
+      div:nth-of-type(2)
+        top: 50%
 
   #landing li span
     font-family: arial
