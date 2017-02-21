@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     indexfdasfadsfadsfadsfasdfasdfadsfadfdafadfadfad{{content}}
-    <nav id="landing" class="land-unactive" style="width: 100%;">
+    <nav id="landing" class="land-unactive" style="width: 100%;" v-if="shownav">
       <ul id="landing-items">
         <li>
           <a>
@@ -29,6 +29,11 @@
         default: function () {
           return {content: 'hello'}
         }
+      }
+    },
+    data() {
+      return {
+        shownav: false
       }
     }
   }
