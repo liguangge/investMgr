@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 // import {getCookie} from './util/util'
 
 import 'common/stylus/index.styl'
@@ -22,6 +23,7 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: {App}
