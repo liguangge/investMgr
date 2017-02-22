@@ -35,6 +35,13 @@
       return {
         shownav: false
       }
+    },
+    created() {
+//      this.$http.get('/api/getSubCompanys').then((response) => {
+//        response = response.body
+//        console.log(response.data)
+//      })
+      console.log('index created')
     }
   }
 </script>

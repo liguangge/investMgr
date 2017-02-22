@@ -42,10 +42,13 @@
       }
     },
     created() {
-      console.log('created')
-      setTimeout(() => {
-        this.loading = false
-      }, 3000)
+      console.log('app created')
+      this.$http.get('/api/initSubCompanys').then((response) => {
+        response = response.body
+        let subCompanys = response.data
+        console.log(response.data)
+        this.$store.dispatch('initSubCompanys', subCompanys)
+      })
     },
     data () {
       return {

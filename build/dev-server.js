@@ -21,6 +21,36 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+var obj = {
+  subCompanys: [
+    {'name': 1, 'url': 'module3_url1111'},
+    {'name': 2, 'url': 'module3_url22222'},
+    {'name': 3, 'url': 'module3_url33333'},
+    {'name': 4, 'url': 'module3_url44444'},
+    {'name': 5, 'url': 'module3_url55555'},
+    {'name': 6, 'url': 'module3_url66666'}]
+}
+
+var apiRoutes = express.Router()
+
+apiRoutes.get('/getSubCompanys', function (req, res) {
+  res.json({
+    errno: 0,
+    data: obj.subCompanys
+  });
+})
+
+apiRoutes.get('/initSubCompanys', function (req, res) {
+  res.json({
+    errno: 0,
+    data: obj.subCompanys
+  });
+})
+
+
+app.use('/api', apiRoutes)
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -29,12 +59,13 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {}
+  log: () => {
+  }
 })
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
+    hotMiddleware.publish({action: 'reload'})
     cb()
   })
 })
@@ -43,7 +74,7 @@ compiler.plugin('compilation', function (compilation) {
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
   if (typeof options === 'string') {
-    options = { target: options }
+    options = {target: options}
   }
   app.use(proxyMiddleware(options.filter || context, options))
 })

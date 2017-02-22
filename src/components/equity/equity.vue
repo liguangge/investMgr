@@ -23,7 +23,7 @@
       }
     },
     created() {
-        this.$store.dispatch('getSubCompanys')
+//        this.$store.dispatch('getSubCompanys')
     }
   }
 </script>
