@@ -6,12 +6,15 @@ import VueRouter from 'vue-router'
 import router from './router'
 import store from './store'
 import VueResource from 'vue-resource'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 // import {getCookie} from './util/util'
 
 import 'common/stylus/index.styl'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(ElementUI)
 
 router.beforeEach((to, from, next) => {
   console.log('1' + to.path)
