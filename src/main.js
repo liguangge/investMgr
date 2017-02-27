@@ -21,11 +21,22 @@ router.beforeEach((to, from, next) => {
   if (to.path !== '/NoAuth') {
     console.log('router.beforeEach')
     // console.log(getCookie('test'))
-     next()
+    next()
     //  next('/NoAuth')
   } else {
-     next()
+    next()
   }
+})
+
+Vue.http.interceptors.push(function (request, next) {
+  // modify method
+  // request.method = 'POST'
+
+  // modify headers
+  request.headers.set('token', 'token123')
+  console.log('before post' + request.headers.toString())
+  // continue to next interceptor
+  next()
 })
 
 /* eslint-disable no-new */

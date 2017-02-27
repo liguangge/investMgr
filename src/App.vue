@@ -43,12 +43,15 @@
     },
     created() {
       console.log('app created')
-      this.$http.get('/api/initSubCompanys').then((response) => {
+      this.$http.post('/api/initSubCompanys').then((response) => {
         response = response.body
         let subCompanys = response.data
         console.log(response.data)
         this.$store.dispatch('initSubCompanys', subCompanys)
       })
+//      this.$resource.save('/api/initSubCompanys').then((response) => {
+//
+//      })
     },
     data () {
       return {
