@@ -31,7 +31,6 @@ router.beforeEach((to, from, next) => {
 Vue.http.interceptors.push(function (request, next) {
   // modify method
   // request.method = 'POST'
-
   // modify headers
   request.headers.set('token', 'token123')
   console.log('before post' + request.headers.toString())

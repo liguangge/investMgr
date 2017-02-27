@@ -1,6 +1,8 @@
 <template>
   <div class="index">
-    indexfdasfadsfadsfadsfasdfasdfadsfadfdafadfadfad{{content}}
+    <div class="banner">fada</div>
+    <div class="submenu">fad</div>
+    <div class="doclist"></div>
     <nav id="landing" class="land-unactive" style="width: 100%;" v-if="shownav">
       <ul id="landing-items">
         <li>
@@ -47,6 +49,24 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .index
+    positive: relative
+    width: 100%
+    text-align: center
+    .banner
+      display: relative
+      height: 360px
+      width: 100%
+      background: greenyellow
+    .submenu
+      height: 300px
+      width: 1006px
+      background: orangered
+      margin: 0 auto
+    .doclist
+      width: 100%
+      height: 400px
+      background: blanchedalmond
   #landing
     width: 0
     height: 100%

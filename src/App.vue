@@ -13,6 +13,7 @@
         </li>
         <li class="quebec">&nbsp;</li>
       </ul>
+      <div class="name">顾玉华/098581</div>
     </div>
     <div class="approach" v-if="loading">
       <ul class="spinner">
@@ -117,17 +118,27 @@
       }
     }
     .header
-      positive: relative
+      position: relative
       width: 100%
-      height: 50px
+      height: 70px
       display: flex
       border: 1px solid #333
+      vertical-align: middle
       ul
         positive: relative
         display: flex
         width: 100%
         li
           flex: 1
+          height: 70px
+          line-height : 70px
+      .name
+        position: absolute
+        top: 5px
+        right: 50px
+        width: 150px
+        height: 70px
+        line-height: 70px
       .quebec
         position: absolute
         top: 20px
